@@ -1,4 +1,3 @@
-import { FullScreenPageComponent } from './../../pages/full-screen-page/full-screen-page.component';
 import { Component } from '@angular/core';
 
 interface MenuItem {
@@ -15,11 +14,11 @@ interface MenuItem {
 export class SideMenuComponent {
 
     public menuItems: MenuItem[] = [
-        { route: 'maps/fullscreen', name: 'FullScreen' },
-        { route: 'maps/zoom-range', name: 'Zoom-Range' },
-        { route: 'maps/markers', name: 'Markers' },
-        { route: 'maps/properties', name: 'Houses' },
-    ]
+        { route: '/maps/fullscreen', name: 'FullScreen' },
+        { route: '/maps/zoom-range', name: 'ZoomRange' },
+        { route: '/maps/markers', name: 'Markers' },
+        { route: '/maps/properties', name: 'Houses' },
+    ];
 
 
 }

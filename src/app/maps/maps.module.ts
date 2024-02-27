@@ -12,18 +12,18 @@ import { ZoomPageComponent } from './pages/zoom-page/zoom-page.component';
 
 
 @NgModule({
-  declarations: [
-    MiniMapComponent,
-    SideMenuComponent,
-    MapsLayoutComponent,
-    FullScreenPageComponent,
-    MarkersPageComponent,
-    PropertiesPageComponent,
-    ZoomPageComponent
-  ],
-  imports: [
-    CommonModule,
-    MapsRoutingModule
-  ]
+    declarations: [
+        MiniMapComponent,
+        SideMenuComponent,
+        MapsLayoutComponent,
+        FullScreenPageComponent,
+        MarkersPageComponent,
+        PropertiesPageComponent,
+        ZoomPageComponent
+    ],
+    imports: [
+        CommonModule,
+        MapsRoutingModule
+    ]
 })
 export class MapsModule { }
