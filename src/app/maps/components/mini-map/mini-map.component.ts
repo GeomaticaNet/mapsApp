@@ -1,10 +1,37 @@
-import { Component } from '@angular/core';
+import { LngLat } from 'mapbox-gl';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Map, Marker } from 'mapbox-gl';
 
 @Component({
-  selector: 'app-mini-map',
-  templateUrl: './mini-map.component.html',
-  styleUrls: ['./mini-map.component.css']
+    selector: 'map-mini-map',
+    templateUrl: './mini-map.component.html',
+    styleUrls: ['./mini-map.component.css']
 })
 export class MiniMapComponent {
+
+    @Input() lngLat?: [number, number];
+    @ViewChild('map') divMap?: ElementRef;
+
+    ngAfterViewInit() {
+
+        if (!this.divMap?.nativeElement) throw "Map Div not found";
+        if (!this.lngLat) throw "LngLat can't be null";
+        // mapa
+
+        const map = new Map({
+            container: this.divMap.nativeElement, // container ID
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            center: this.lngLat, // starting position [lng, lat]
+            //-32.8833352,-68.8585191
+            zoom: 15, // starting zoom
+            interactive: false
+        });
+
+        // marker inicial
+        new Marker()
+            .setLngLat(this.lngLat)
+            .addTo(map);
+    }
+
 
 }
